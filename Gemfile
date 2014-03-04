@@ -19,3 +19,6 @@ end
 group :development do
   gem 'sqlite3'
 end
+
+gem 'newrelic_rpm'
+gem 'devise'
