@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  public: false
+  description: MyText
+  duedate: 2014-03-06
+
+two:
+  name: MyString
+  public: false
+  description: MyText
+  duedate: 2014-03-06
