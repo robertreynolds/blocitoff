@@ -11,6 +11,8 @@ Blocitoff::Application.routes.draw do
 
 
 
+
+
   match "about" => 'welcome#about', via: :get
 
   root :to =>'home#index'
