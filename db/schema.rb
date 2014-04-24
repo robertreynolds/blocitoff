@@ -11,17 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140421164801) do
-
-  create_table "lists", :force => true do |t|
-    t.string   "name"
-    t.boolean  "public",      :default => false
-    t.text     "description"
-    t.date     "due_date"
-    t.integer  "user_id"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
-  end
+ActiveRecord::Schema.define(:version => 20140423014331) do
 
   create_table "tasks", :force => true do |t|
     t.string   "name"
@@ -30,10 +20,11 @@ ActiveRecord::Schema.define(:version => 20140421164801) do
     t.boolean  "complete",    :default => false
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
-    t.integer  "list_id"
+    t.integer  "user_id"
+    t.string   "category"
   end
 
-  add_index "tasks", ["list_id"], :name => "index_tasks_on_list_id"
+  add_index "tasks", ["user_id"], :name => "index_tasks_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

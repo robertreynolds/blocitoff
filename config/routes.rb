@@ -3,18 +3,19 @@ Blocitoff::Application.routes.draw do
   devise_for :users
 
   resources :users do
-      resources :lists do
-        resources :tasks
-      end
+       resources :tasks
   end
 
+  
+
+authenticated :user do
+  root  :to => 'tasks#index'
+end 
 
 
 
+match "about" => 'welcome#about', via: :get
 
-
-  match "about" => 'welcome#about', via: :get
-
-  root :to =>'home#index'
+root :to =>'home#index'
 
 end
