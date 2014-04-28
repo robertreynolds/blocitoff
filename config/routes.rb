@@ -3,14 +3,15 @@ Blocitoff::Application.routes.draw do
   devise_for :users
 
   resources :users do
-       resources :tasks
+       resources :tasks#, :collection => { :complete=> :put }
+       match '/tasks/:id/complete' , to: 'tasks#complete', as: :complete
   end
 
   
 
 authenticated :user do
   root  :to => 'tasks#index'
-end 
+end   
 
 
 

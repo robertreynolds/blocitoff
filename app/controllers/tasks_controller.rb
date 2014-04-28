@@ -35,6 +35,11 @@ class TasksController < ApplicationController
     end
   end
 
+  def complete
+    #mark all tasks as complete
+    redirect_to user_tasks_path
+  end
+
 private
 
 def sort_column
