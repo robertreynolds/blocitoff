@@ -1,17 +1,20 @@
 <h1> My Tasks </h1>
 <%= link_to "Create Tasks", new_user_task_path(current_user),  class: 'btn btn-primary btn-mini' %>
 <br><br>
-<%= form_tag user_complete_path(current_user, :task_id), :method => :put do %>
-<table class = "filterable">
-  <tbody>
+
+
+<table id = "tasks" class = "filterable">
+  <thead>
       <tr> 
-          <th><%= sortable "name", "Name" %></th>
-          <th><%= sortable "description", "Description" %></th>
-          <th><%= sortable "category", "Category" %></th>
-          <th><%= sortable "created_at", "Days Left" %></th>
-          <th><%= sortable "created_at", "Due Date" %></th>
-          <th><%= sortable "complete", "Complete" %></th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Days Left</th>
+          <th>Due Date</th>
+          <th>Complete</th>
       </tr>
+  </thead>
+  <tbody>
   <% @tasks.each do |task|  %>    
       <tr>
           <td><%= task.name%></td> 
@@ -25,6 +28,6 @@
   </tbody>
 </table>
 <br>
-  <%= submit_tag "Mark as Complete" %>
-  <% end %>
+
+
 

@@ -1,11 +1,11 @@
 class TasksController < ApplicationController
-  helper_method :sort_column, :sort_direction
+  
   def index
-    @tasks = current_user.tasks.order(sort_column + " " + sort_direction)
+    @tasks = current_user.tasks
+    
   end
 
   def new
-  sort_direction
     @task = Task.new
    
   end
@@ -40,15 +40,6 @@ class TasksController < ApplicationController
     redirect_to user_tasks_path
   end
 
-private
-
-def sort_column
-  Task.column_names.include?(params[:sort]) ? params[:sort] : "name"
-end
-
-def sort_direction
-  %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-end
 
 
 end

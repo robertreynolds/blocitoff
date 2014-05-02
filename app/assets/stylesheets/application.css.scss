@@ -1,34 +1,12 @@
 @import "bootstrap";
+@import "dataTables/jquery.dataTables";
+/*
 
-table.filterable {
-  border-collapse: collapse;  
-}
-
-.filterable td, .filterable th {
-  padding: 4px 10px;
-  border: solid 1px #AAA;
-}
-
-.filterable .filterable {
-  text-align: left;
-}
-
-.filterable th .current {
-  padding-right: 30px;
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: 40%;
-}
+*= require_self
+*= require dataTables/jquery.dataTables
+*= require_tree .
 
 
-.filterable {
-  th {
-    .asc {
-        background-image: image-url('up_arrow.png');
-    }
 
-    .desc {
-        background-image: image-url('down_arrow.png');
-    }
-  }
-}
+
+*/

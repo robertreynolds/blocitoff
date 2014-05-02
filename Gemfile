@@ -7,6 +7,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   gem 'bootstrap-sass', '~> 2.3.1.0'
+  gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 end
 
 
@@ -23,3 +24,5 @@ end
 
 gem 'newrelic_rpm'
 gem 'devise'
+
+

@@ -3,7 +3,7 @@ Blocitoff::Application.routes.draw do
   devise_for :users
 
   resources :users do
-       resources :tasks#, :collection => { :complete=> :put }
+       resources :tasks
        match '/tasks/:id/complete' , to: 'tasks#complete', as: :complete
   end
 
